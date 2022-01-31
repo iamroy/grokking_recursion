@@ -1,20 +1,20 @@
-def string_reversal_recursion(str):
-    if len(str):
-        str_rev = string_reversal_recursion(str[1:]) + str[0]
+def string_reversal_recursion(string):
+    if len(string):
+        str_rev = string_reversal_recursion(string[1:]) + string[0]
     else:
-        str_rev = str
+        str_rev = string
 
     return str_rev
 
 
-def number_of_vowels_recursion(str):
+def number_of_vowels_recursion(string):
     vowels = 'aeiou'
 
-    str = str.lower()
-    if len(str)>1:
-        return number_of_vowels_recursion(str[0]) + number_of_vowels_recursion(str[1:])
-    elif len(str) == 1:
-        return int(str[0] in vowels)
+    string = string.lower()
+    if len(string)>1:
+        return number_of_vowels_recursion(string[0]) + number_of_vowels_recursion(string[1:])
+    elif len(string) == 1:
+        return int(string[0] in vowels)
     else:
         return 0
 
@@ -85,15 +85,44 @@ def foo(n):
     return foo(foo(n + 11))
 
 
-def remove_adjacent_duplicates(str):
+def remove_adjacent_duplicates(string):
 
-    if len(str)<2:
-        return str
+    if len(string)<2:
+        return string
 
-    if str[0].lower() == str[1].lower():
-        return remove_adjacent_duplicates(str[1:])
+    if string[0].lower() == string[1].lower():
+        return remove_adjacent_duplicates(string[1:])
     else:
-        return str[0] + remove_adjacent_duplicates(str[1:])
+        return string[0] + remove_adjacent_duplicates(string[1:])
+
+
+def string_length_recursion(string):
+
+    if not string:
+        return 0
+    else:
+        return 1 + string_length_recursion(string[1:])
+
+
+def sum_digits_recursion(string):
+
+    if not string:
+        return 0
+
+    return int(string[0])+sum_digits_recursion(string[1:])
+
+
+def is_palindrome_recursion(string):
+    if not string:
+        return True
+
+    if len(string) == 1:
+        return True
+
+    if string[0] == string[-1]:
+        return is_palindrome_recursion(string[1:len(string)-1])
+    else:
+        return False
 
 
 if __name__ == '__main__':
@@ -105,7 +134,8 @@ if __name__ == '__main__':
     #print(gcd_recursion(6,6))
     #print(pascals_triangle(8))
     #print(decimal_to_binary(8))
-    # Driver Code
     #print(foo(45))
-    print(remove_adjacent_duplicates("HeeLllo"))
-
+    #print(remove_adjacent_duplicates("HeeLllo"))
+    #print(string_length_recursion("a"))
+    #print(sum_digits_recursion("345671"))
+    print(is_palindrome_recursion("0110"))
