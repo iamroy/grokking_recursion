@@ -125,6 +125,45 @@ def is_palindrome_recursion(string):
         return False
 
 
+def average_recursion(nums, current_index):
+
+    if current_index==len(nums):
+        return 0
+
+    return nums[current_index]/len(nums)+average_recursion(nums, current_index+1)
+
+
+def balanced_parenthesis(string, start_index, curr_index):
+
+    if start_index == len(string):
+        return curr_index == 0
+
+    if curr_index < 0:
+        return False
+
+    if string[start_index] == "(":
+        return balanced_parenthesis(string, start_index + 1, curr_index + 1)
+    elif string[start_index] == ")":
+        return balanced_parenthesis(string, start_index + 1, curr_index - 1)
+
+
+def sort_recursion(nums, length):
+
+    if length <= 1:
+        return
+
+    sort_recursion(nums, length-1)
+    #print(nums, nums[-1], nums[length-1])
+    last_element = nums[length-1]
+
+    i = length-2
+
+    while i>=0 and nums[i]>last_element:
+        nums[i+1] = nums[i]
+        i -= 1
+
+    nums[i+1] = last_element
+
 if __name__ == '__main__':
 
     #print(string_reversal_recursion('apple'))
@@ -138,4 +177,13 @@ if __name__ == '__main__':
     #print(remove_adjacent_duplicates("HeeLllo"))
     #print(string_length_recursion("a"))
     #print(sum_digits_recursion("345671"))
-    print(is_palindrome_recursion("0110"))
+    #print(is_palindrome_recursion("0110"))
+    #testVariable = [10,1,4]
+    #currentIndex = 0
+    #print(average_recursion(testVariable, currentIndex))
+    #string_arr= ["(", "(", ")", "(", ")"]
+    #print(balanced_parenthesis(string_arr, 0, 0))
+    nums = [4, 1, 3,2]
+    length = 4
+    sort_recursion(nums, length)
+    print(nums)
