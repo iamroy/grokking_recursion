@@ -1,3 +1,5 @@
+import linkedlist as l
+
 def string_reversal_recursion(string):
     if len(string):
         str_rev = string_reversal_recursion(string[1:]) + string[0]
@@ -164,6 +166,26 @@ def sort_recursion(nums, length):
 
     nums[i+1] = last_element
 
+
+def reverse_linked_list_recursion(linked_list, current, previous):
+    if current.next is None:
+        linked_list.head = current
+        current.next = previous
+        return
+
+    next_node = current.next
+    current.next = previous
+
+    return reverse_linked_list_recursion(linked_list, next_node, current)
+
+def reverse_linked_list_driver(linked_list):
+    if linked_list.head is None:
+        return
+
+    return reverse_linked_list_recursion(linked_list, linked_list.head, None)
+
+
+
 if __name__ == '__main__':
 
     #print(string_reversal_recursion('apple'))
@@ -183,7 +205,20 @@ if __name__ == '__main__':
     #print(average_recursion(testVariable, currentIndex))
     #string_arr= ["(", "(", ")", "(", ")"]
     #print(balanced_parenthesis(string_arr, 0, 0))
-    nums = [4, 1, 3,2]
-    length = 4
-    sort_recursion(nums, length)
-    print(nums)
+    #nums = [4, 1, 3,2]
+    #length = 4
+    #sort_recursion(nums, length)
+    #print(nums)
+    # Driver Code
+    myLinkedList = l.LinkedList()
+    myLinkedList.append_node(3)
+    myLinkedList.append_node(4)
+    myLinkedList.append_node(7)
+    myLinkedList.append_node(11)
+
+    print("Original Linked List")
+    myLinkedList.print_linked_list()
+
+    reverse_linked_list_driver(myLinkedList)
+    print("\nReversed Linked List")
+    myLinkedList.print_linked_list()
