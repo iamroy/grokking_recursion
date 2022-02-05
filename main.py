@@ -1,4 +1,8 @@
 import linkedlist as l
+import double_linkedlist as dl
+from graph import Graph
+from stack import MyStack
+from queue import MyQueue
 
 def string_reversal_recursion(string):
     if len(string):
@@ -210,25 +214,77 @@ if __name__ == '__main__':
     #sort_recursion(nums, length)
     #print(nums)
     # Driver Code
-    myLinkedList = l.LinkedList()
-    myLinkedList.append_node(3)
-    myLinkedList.append_node(4)
-    myLinkedList.append_node(1)
-    myLinkedList.append_node(7)
-    myLinkedList.append_node(8)
-    myLinkedList.append_node(4)
-    myLinkedList.append_node(1)
-    myLinkedList.append_node(1)
-    myLinkedList.append_node(4)
-    myLinkedList.append_node(11)
+    # myLinkedList = l.LinkedList()
+    # myLinkedList.append_node(3)
+    # myLinkedList.append_node(4)
+    # myLinkedList.append_node(1)
+    # myLinkedList.append_node(7)
+    # myLinkedList.append_node(8)
+    # myLinkedList.append_node(4)
+    # myLinkedList.append_node(1)
+    # myLinkedList.append_node(1)
+    # myLinkedList.append_node(4)
+    # myLinkedList.append_node(11)
+    #
+    # print("Original Linked List")
+    # myLinkedList.print_linked_list()
+    #
+    # myLinkedList.remove_duplicate_nodes ()
+    # print("\nDuplicate nodes removed")
+    # myLinkedList.print_linked_list()
+    #
+    # g = Graph(4)
+    # g.add_edge(0, 2)
+    # g.add_edge(0, 1)
+    # g.add_edge(1, 3)
+    # g.add_edge(2, 3)
+    #
+    # g.print_graph()
+    #
+    # print(g.array_adj[1].get_head().data)
+    #
+    # stack_obj = MyStack()
+    #
+    # print("Pushing elements into the stack")
+    # for i in range(5):
+    #     print(i)
+    #     stack_obj.push(i)
+    #
+    # print("is_empty(): " + str(stack_obj.is_empty()))
+    # print("peek(): " + str(stack_obj.peek()))
+    # print("size(): " + str(stack_obj.size()))
+    #
+    # print("Popping elements from the stack")
+    # for x in range(5):
+    #     stack_obj.pop()
+    #     print(stack_obj.stack_list)
 
-    print("Original Linked List")
-    myLinkedList.print_linked_list()
+    queue_obj = MyQueue()
+    print("queue.enqueue(2);")
+    queue_obj.enqueue(2)
+    print("queue.enqueue(4);")
+    queue_obj.enqueue(4)
+    print("queue.enqueue(6);")
+    queue_obj.enqueue(6)
+    print("queue.enqueue(8);")
+    queue_obj.enqueue(8)
+    print("queue.enqueue(10);")
+    queue_obj.enqueue(10)
 
-    #reverse_linked_list_driver(myLinkedList)
-    #print("\nReversed Linked List")
-    #myLinkedList.print_linked_list()
+    queue_obj.print_list()
 
-    myLinkedList.remove_duplicate_nodes ()
-    print("\nDuplicate nodes removed")
-    myLinkedList.print_linked_list()
+    print("is_empty(): " + str(queue_obj.is_empty()))
+    print("front(): " + str(queue_obj.front()))
+    print("rear(): " + str(queue_obj.rear()))
+    print("size(): " + str(queue_obj.size()))
+    print("Dequeue(): " + str(queue_obj.dequeue()))
+    print("Dequeue(): " + str(queue_obj.dequeue()))
+    print("queue.enqueue(12);")
+    queue_obj.enqueue(12)
+    print("queue.enqueue(14);")
+    queue_obj.enqueue(14)
+
+    while queue_obj.is_empty() is False:
+        print("Dequeue(): " + str(queue_obj.dequeue()))
+
+    print("is_empty(): " + str(queue_obj.is_empty()))

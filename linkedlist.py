@@ -1,4 +1,4 @@
-import node as n
+from node import Node
 
 class LinkedList:
     def __init__(self):
@@ -14,7 +14,7 @@ class LinkedList:
             return False
 
     def insert_at_head(self, new_data):
-        new_node = n.Node(new_data)
+        new_node = Node(new_data)
 
         if self.is_empty_linked_list():
             self.head = new_node
@@ -26,7 +26,7 @@ class LinkedList:
         return self.head
 
     def append_node(self, new_data):
-        new_node = n.Node(new_data)
+        new_node = Node(new_data)
 
         if self.head is None:
             self.head = new_node
