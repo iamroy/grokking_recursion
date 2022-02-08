@@ -188,77 +188,28 @@ def reverse_linked_list_driver(linked_list):
 
     return reverse_linked_list_recursion(linked_list, linked_list.head, None)
 
+def linked_list_driver():
+    myLinkedList = l.LinkedList()
+    myLinkedList.append_node(3)
+    myLinkedList.append_node(4)
+    myLinkedList.append_node(1)
+    myLinkedList.append_node(7)
+    myLinkedList.append_node(8)
+    myLinkedList.append_node(4)
+    myLinkedList.append_node(1)
+    myLinkedList.append_node(1)
+    myLinkedList.append_node(4)
+    myLinkedList.append_node(11)
+
+    print("Original Linked List")
+    myLinkedList.print_linked_list()
+
+    myLinkedList.remove_duplicate_nodes ()
+    print("\nDuplicate nodes removed")
+    myLinkedList.print_linked_list()
 
 
-if __name__ == '__main__':
-
-    #print(string_reversal_recursion('apple'))
-    #print(number_of_vowels_recursion('a'))
-    #print(first_index_recursion([4,3,2,1,1,1,1,1], 1, 0))
-    #print(fibonacci_number_at_index(7))
-    #print(gcd_recursion(6,6))
-    #print(pascals_triangle(8))
-    #print(decimal_to_binary(8))
-    #print(foo(45))
-    #print(remove_adjacent_duplicates("HeeLllo"))
-    #print(string_length_recursion("a"))
-    #print(sum_digits_recursion("345671"))
-    #print(is_palindrome_recursion("0110"))
-    #testVariable = [10,1,4]
-    #currentIndex = 0
-    #print(average_recursion(testVariable, currentIndex))
-    #string_arr= ["(", "(", ")", "(", ")"]
-    #print(balanced_parenthesis(string_arr, 0, 0))
-    #nums = [4, 1, 3,2]
-    #length = 4
-    #sort_recursion(nums, length)
-    #print(nums)
-    # Driver Code
-    # myLinkedList = l.LinkedList()
-    # myLinkedList.append_node(3)
-    # myLinkedList.append_node(4)
-    # myLinkedList.append_node(1)
-    # myLinkedList.append_node(7)
-    # myLinkedList.append_node(8)
-    # myLinkedList.append_node(4)
-    # myLinkedList.append_node(1)
-    # myLinkedList.append_node(1)
-    # myLinkedList.append_node(4)
-    # myLinkedList.append_node(11)
-    #
-    # print("Original Linked List")
-    # myLinkedList.print_linked_list()
-    #
-    # myLinkedList.remove_duplicate_nodes ()
-    # print("\nDuplicate nodes removed")
-    # myLinkedList.print_linked_list()
-    #
-    # g = Graph(4)
-    # g.add_edge(0, 2)
-    # g.add_edge(0, 1)
-    # g.add_edge(1, 3)
-    # g.add_edge(2, 3)
-    #
-    # g.print_graph()
-    #
-    # print(g.array_adj[1].get_head().data)
-    #
-    # stack_obj = MyStack()
-    #
-    # print("Pushing elements into the stack")
-    # for i in range(5):
-    #     print(i)
-    #     stack_obj.push(i)
-    #
-    # print("is_empty(): " + str(stack_obj.is_empty()))
-    # print("peek(): " + str(stack_obj.peek()))
-    # print("size(): " + str(stack_obj.size()))
-    #
-    # print("Popping elements from the stack")
-    # for x in range(5):
-    #     stack_obj.pop()
-    #     print(stack_obj.stack_list)
-
+def queue_driver():
     queue_obj = MyQueue()
     print("queue.enqueue(2);")
     queue_obj.enqueue(2)
@@ -288,3 +239,64 @@ if __name__ == '__main__':
         print("Dequeue(): " + str(queue_obj.dequeue()))
 
     print("is_empty(): " + str(queue_obj.is_empty()))
+
+
+def stack_driver():
+    stack_obj = MyStack()
+
+    print("Pushing elements into the stack")
+    for i in range(5):
+        print(i)
+        stack_obj.push(i)
+
+    print("is_empty(): " + str(stack_obj.is_empty()))
+    print("peek(): " + str(stack_obj.peek()))
+    print("size(): " + str(stack_obj.size()))
+
+    print("Popping elements from the stack")
+    for x in range(5):
+        stack_obj.pop()
+        print(stack_obj.stack_list)
+
+
+
+if __name__ == '__main__':
+
+    #print(string_reversal_recursion('apple'))
+    #print(number_of_vowels_recursion('a'))
+    #print(first_index_recursion([4,3,2,1,1,1,1,1], 1, 0))
+    #print(fibonacci_number_at_index(7))
+    #print(gcd_recursion(6,6))
+    #print(pascals_triangle(8))
+    #print(decimal_to_binary(8))
+    #print(foo(45))
+    #print(remove_adjacent_duplicates("HeeLllo"))
+    #print(string_length_recursion("a"))
+    #print(sum_digits_recursion("345671"))
+    #print(is_palindrome_recursion("0110"))
+    #testVariable = [10,1,4]
+    #currentIndex = 0
+    #print(average_recursion(testVariable, currentIndex))
+    #string_arr= ["(", "(", ")", "(", ")"]
+    #print(balanced_parenthesis(string_arr, 0, 0))
+    #nums = [4, 1, 3,2]
+    #length = 4
+    #sort_recursion(nums, length)
+    #print(nums)
+
+    #linked_list_driver
+    
+    # g = Graph(4)
+    # g.add_edge(0, 2)
+    # g.add_edge(0, 1)
+    # g.add_edge(1, 3)
+    # g.add_edge(2, 3)
+    #
+    # g.print_graph()
+    #
+    # print(g.array_adj[1].get_head().data)
+    #
+    #stack_driver()
+    queue_driver()
+
+
